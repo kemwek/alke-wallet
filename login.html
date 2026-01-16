@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billetera - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+      body {
+        padding: 20px;
+        background-color:#212529;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+            
+      .btn {
+        background-color: #fd7e14;
+        color:white;
+      }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav class="navbar bg-secondary-subtle rounded-4">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="./img/alkemy-logo.png" alt="Logo Alkemy" width="100" >
+                </a>
+                <span class="fs-3 fw-semibold">Wallet</span>
+            </div>
+        </nav>
+    </div>
+</header>
+<br>
+
+<section>
+  <div class="container text-bg-dark">
+    <h1>Login</h1>
+    <form id="formLogin">
+      <div class="form-group ">
+        <label class="form-label" for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Ingrese email">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="password">Password:</label>
+        <input type="password" class="form-control" id="password" placeholder="Ingrese password">
+      </div>
+      <br>
+      <div class="col-6 mx-auto">
+        <button type="submit" class="btn btn-light w-100">Login</button>
+      </div>
+      
+      
+    </form>
+  
+  </div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>
