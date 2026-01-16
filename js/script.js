@@ -1,0 +1,63 @@
+$(document).ready(function(){
+    // Crea una variable saldo (para uso futuro)
+    let saldo=100000;
+    // Llena el elemento de saldo con el saldo actual
+    $('#saldo').text("$"+saldo.toFixed(2));
+
+    $('#formLogin').submit(function(e) {
+
+        //evita el envío automático del formulario
+        e.preventDefault();
+    
+        //Lee valores desde los inputs
+        let email = $('#email').val();
+        let password = $('#password').val();
+        // Verificar las credenciales
+        if (email === 'admin@gmail.com' && password === 'admin') {
+        // Credenciales válidas, redirigir a menu.html
+        alert('Login OK. Redirigiendo.');
+        window.location.href = 'menu.html';
+        } else {
+        // Credenciales inválidas, mostrar mensaje de error
+        alert('Usuario o contraseña invalido. Inténtalo de nuevo.');
+        }
+    });
+
+    $('#formDeposito').submit(function(e) {
+
+        //evita el envío automático del formulario
+        e.preventDefault();
+    
+        //Lee valores desde los inputs
+        let montoDeposito = parseInt($('#montoDeposito').val());
+
+        if (!isNaN(montoDeposito) && montoDeposito > 0) {
+            saldo += montoDeposito;
+            $('#saldo').text("$"+saldo);
+            $('#montoDeposito').val('');
+            alert('Se ha depositado $'+ montoDeposito +' en su cuenta.');
+        } else {
+            alert('Monto invalido. Por favor ingrese un número positivo.');
+        }
+       
+    });
+
+
+
+
+
+/*
+
+
+if (document.getElementById("btnAgregaContacto")) {
+let btnAgregaContacto=document.getElementById("btnAgregaContacto");
+btnAgregaContacto.addEventListener("click",function() {
+    let li=document.createElement("li");
+    li.className="list-group-item";
+    li.innerHTML= '<div class="contact-info"> <span class="contact-name">'+document.getElementById("nombre").value+'</span> <span class="contact-details">CBU:'+document.getElementById("cuenta").value+', Alias: '+document.getElementById("alias").value +', Banco: '+document.getElementById("banco").value +'</span>   </div> ';
+    document.getElementById("contactList").prepend(li);
+    
+});
+}*/
+
+});
