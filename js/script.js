@@ -68,7 +68,31 @@ $(document).ready(function(){
        
     });
 
+        $('#formAgregaContacto').submit(function(e) {
 
+        //evita el envío automático del formulario
+        e.preventDefault();
+    
+        //Lee valores desde los inputs
+        let nombre = $('#nombre').val();
+        let cuenta = $('#cuenta').val();
+        let banco = $('#banco').val();
+        let opciones = $('#listaContactos option').length;
+
+        if (nombre && cuenta && banco) {
+            opciones++
+            $('#listaContactos').append('<option value="' + opciones + '">' + nombre + ' | Cuenta: ' + cuenta + ' | Banco: ' + banco + '</option>');
+            $('#listaContactos').attr('size', opciones);
+            alert('Contacto agregado: '+ nombre + ' | Cuenta: ' + cuenta + ' | Banco: ' + banco);
+            $('#formAgregaContacto')[0].reset();
+        } else {
+            alert('Por favor complete todos los campos.');
+        }
+
+       
+        
+       
+    });
 
 
 /*
