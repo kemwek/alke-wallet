@@ -43,6 +43,31 @@ $(document).ready(function(){
     });
 
 
+    $('#formEnviarDinero').submit(function(e) {
+
+        //evita el envío automático del formulario
+        e.preventDefault();
+    
+        //Lee valores desde los inputs
+        let montoEnvio = parseInt($('#montoEnvio').val());
+
+        if (!isNaN(montoEnvio) && montoEnvio > 0) {
+            if($('#listaContactos option:selected').text() != "") {
+                saldo -= montoEnvio;
+                $('#saldo').text("$"+saldo);
+                $('#montoEnvio').val('');
+                alert('Se ha enviado $'+ montoEnvio +' a '+$('#listaContactos option:selected').text());
+            }
+            else {
+                alert('Por favor seleccione un contacto válido.');
+            }
+            
+        } else {
+            alert('Monto invalido. Por favor ingrese un número positivo.');
+        }
+       
+    });
+
 
 
 
