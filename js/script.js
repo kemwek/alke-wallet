@@ -88,10 +88,15 @@ $(document).ready(function(){
         } else {
             alert('Por favor complete todos los campos.');
         }
-
-       
         
        
+    });
+
+    $("#buscaContacto").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#listaContactos option").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
     });
 
 
