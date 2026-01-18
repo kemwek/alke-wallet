@@ -26,7 +26,7 @@
               color:black;
       }
       .form-select {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
 
   </style>
@@ -48,9 +48,7 @@
   <section>
     <div class="container text-bg-dark">
       <div class="card">
-        <div class="card-header">
-          Bienvenido, Admin
-        </div>
+        <div class="card-header">Bienvenido, <span id="nombre"></span> </div>
         <div class="card-body">
           <h5 class="card-title"></h5>
           <p class="card-text">Tu saldo actual es:</p>
@@ -73,13 +71,10 @@
     <form id="formEnviarDinero">
      
  <h4>Seleccione contacto:</h4>
- <input class="form-control" id="buscaContacto" type="text" placeholder="Buscar contacto">
+ <input class="form-control" id="buscaContacto" type="text" placeholder="Buscar contacto para filtrar">
 <br>
  <select class="form-select" id="listaContactos" size="4" aria-label="Lista de contactos">
-  <option value="1">John Doe | Cuenta: 123456789 | Banco: ABC Bank </option>
-  <option value="2">Jane Smith | Cuenta: 987654321 | Banco: XYZ Bank</option>
-  <option value="3">Robert Johnson | Cuenta: 456789123 | Banco: DEF Bank</option>
-  <option value="4">Emily Davis | Cuenta: 321654987 | Banco: GHI Bank</option>
+  
 </select>
 <br>
    <div class="form-group">
@@ -103,13 +98,13 @@
       <form id="formAgregaContacto" class="collapse">
         <div class="form-group">
           <label class="form-label" for="nombre">Ingrese Nombre y Apellido:</label>
-          <input type="text" class="form-control" id="nombre" placeholder="Nombre Apellido">
+          <input type="text" class="form-control" id="contactoNombre" placeholder="Nombre Apellido">
           
           <label class="form-label" for="cbu">Ingrese # Cuenta:</label>
-          <input type="text" class="form-control" id="cuenta" placeholder="Ingrese # cuenta">
+          <input type="text" class="form-control" id="contactoCuenta" placeholder="Ingrese # cuenta">
 
           <label class="form-label" for="banco">Ingrese Banco:</label>
-          <input type="text" class="form-control" id="banco" placeholder="Ingrese Banco">
+          <input type="text" class="form-control" id="contactoBanco" placeholder="Ingrese Banco">
 
           <button type="submit" class="btn btn-light">Agregar</button>
         </div>

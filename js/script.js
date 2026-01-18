@@ -1,8 +1,16 @@
 $(document).ready(function(){
-    // Crea una variable saldo (para uso futuro)
+    // Crea una variable saldo (para uso futuro, ej: extraer desde BD)
     let saldo=100000;
     // Llena el elemento de saldo con el saldo actual
-    $('#saldo').text("$"+saldo.toFixed(2));
+    $('#saldo').text("$"+saldo.toLocaleString('es-CL'));
+
+    // Crea variable nombre, para uso futuro (ej: extraer desde BD)
+    let nombre = "Admin";
+    // Llena el elemento de nombre con el nombre actual
+    $('#nombre').text(nombre);
+
+
+    // Procesa el envío del formulario de login en login.html
 
     $('#formLogin').submit(function(e) {
 
@@ -23,6 +31,8 @@ $(document).ready(function(){
         }
     });
 
+    // Procesa el envío del formulario de depósito en deposit.html
+
     $('#formDeposito').submit(function(e) {
 
         //evita el envío automático del formulario
@@ -42,7 +52,7 @@ $(document).ready(function(){
        
     });
 
-
+    // Procesa el envío del formulario de envío de dinero en sendmoney.html
     $('#formEnviarDinero').submit(function(e) {
 
         //evita el envío automático del formulario
@@ -68,15 +78,33 @@ $(document).ready(function(){
        
     });
 
-        $('#formAgregaContacto').submit(function(e) {
+    //Funcionalidad que llena la lista de contactos en sendmoney.html
+    //Se define como variable para futuros usos (ej. extraer desde BD)
+    let contactos = [
+        {nombre: 'Juan Perez', Cuenta: '1234567', banco: 'Banco A' },   
+        {nombre: 'Maria Lopez', Cuenta: '7654321', banco: 'Banco B' },
+        {nombre: 'Carlos Rodriguez', Cuenta: '9876543', banco: 'Banco C' },
+        {nombre: 'Ana Martinez', Cuenta: '3456789', banco: 'Banco D' },
+    ];
+    let html = ''; 
+    let listaContactos = $('#listaContactos');
+    
+    $.each(contactos, function(index, contacto) {
+        html += '<option value="' + (index + 1) + '">' + contacto.nombre + ' | Cuenta: ' + contacto.Cuenta + ' | Banco: ' + contacto.banco + '</option>';
+    });
+    listaContactos.append(html);
+
+    
+    // Procesa el envío del formulario de agregar contacto en sendmoney.html
+    $('#formAgregaContacto').submit(function(e) {
 
         //evita el envío automático del formulario
         e.preventDefault();
     
         //Lee valores desde los inputs
-        let nombre = $('#nombre').val();
-        let cuenta = $('#cuenta').val();
-        let banco = $('#banco').val();
+        let nombre = $('#contactoNombre').val();
+        let cuenta = $('#contactoCuenta').val();
+        let banco = $('#contactoBanco').val();
         let opciones = $('#listaContactos option').length;
 
         if (nombre && cuenta && banco) {
@@ -88,10 +116,10 @@ $(document).ready(function(){
         } else {
             alert('Por favor complete todos los campos.');
         }
-        
-       
+         
     });
 
+    // Filtra la lista de contactos (reemplaza a autocompletar) en sendmoney.html
     $("#buscaContacto").on("keyup", function() {
       var value = $(this).val().toLowerCase();
       $("#listaContactos option").filter(function() {
@@ -99,19 +127,28 @@ $(document).ready(function(){
       });
     });
 
-
-/*
-
-
-if (document.getElementById("btnAgregaContacto")) {
-let btnAgregaContacto=document.getElementById("btnAgregaContacto");
-btnAgregaContacto.addEventListener("click",function() {
-    let li=document.createElement("li");
-    li.className="list-group-item";
-    li.innerHTML= '<div class="contact-info"> <span class="contact-name">'+document.getElementById("nombre").value+'</span> <span class="contact-details">CBU:'+document.getElementById("cuenta").value+', Alias: '+document.getElementById("alias").value +', Banco: '+document.getElementById("banco").value +'</span>   </div> ';
-    document.getElementById("contactList").prepend(li);
     
-});
-}*/
+    //Funcionalidad que llena la tabla de movimientos en transactions.html
+    // Se define como variable para futuros usos (ej. extraer desde BD)
+    let movimientos = [
+        {fecha: '2024-06-01', tipo: 'Depósito', nombre: 'Juan Perez', monto: 50000 },
+        {fecha: '2024-06-03', tipo: 'Envío', nombre: 'Maria Lopez', monto: 20000 },
+        {fecha: '2024-06-05', tipo: 'Depósito', nombre: 'Carlos Rodriguez', monto: 75000 },
+        {fecha: '2024-06-07', tipo: 'Envío', nombre: 'Ana Martinez', monto: 15000 },
+    ];
+
+    let tablaMovimientos = $('#tablaMovimientos');
+    html = ''; 
+    
+    $.each(movimientos, function(index, movimiento) {
+        html += '<tr>';
+        html += '<td>' + movimiento.fecha + '</td>';
+        html += '<td>' + movimiento.tipo + '</td>';
+        html += '<td>' + movimiento.nombre + '</td>';
+        html += '<td>' + movimiento.monto + '</td>';
+        html += '</tr>';
+    });
+
+    tablaMovimientos.append(html);
 
 });

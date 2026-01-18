@@ -27,6 +27,9 @@
       .form-select {
         font-size: 0.9rem;
       }
+      .tabla-movimientos {
+        font-size: 0.8rem;
+      }
   </style>
 </head>
 <body>
@@ -46,7 +49,7 @@
     <section>
       <div class="container text-bg-dark">
         <div class="card">
-          <div class="card-header"> Bienvenido, Admin </div>
+          <div class="card-header"> Bienvenido, <span id="nombre"></span> </div>
           <div class="card-body">
             <h5 class="card-title"></h5>
             <p class="card-text">Tu saldo actual es:</p>
@@ -59,17 +62,21 @@
     </section> 
     <br>
 
-  <div class="container">
+  <div class="container text-bg-dark">
     <h2>Últimos Movimientos</h2>
-    <ul class="list-group">
-      <li class="list-group-item">Compra en línea - $20.00</li>
-      <li class="list-group-item">Depósito - $900.00</li>
-      <li class="list-group-item">Transferencia recibida - $75.00</li>
-      <li class="list-group-item">Compra en línea - $5550.00</li>
-      <li class="list-group-item">Depósito misma cuenta - $10500.00</li>
-      <li class="list-group-item">Transferencia recibida - $7575.00</li>
-    </ul>
-
+    <table id="tablaMovimientos" class="table table-striped mt-4 tabla-movimientos">
+      <thead>
+        <tr>
+          <th scope="col">Fecha</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Monto</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
   </div>
   <br>
   <section>
