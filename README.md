@@ -20,6 +20,13 @@ En este README se documenta la estructura, instalación, uso y, en detalle, las 
 - sendmoney.html — Envío de dinero, gestión y búsqueda de contactos.
 - transactions.html — Tabla de últimos movimientos.
 
+## Características clave
+
+- Se realizó un solo archivo tanto JS como CSS, esto para encapsular todo el código 
+y facilitar el cambio a futuro (no se deben incluir más scripts u hojas de estilo, solo se deben modificar las actuales).
+- Se dejaron todos los valores en variables, para incluir un uso futuro en BD.
+- En enviar dinero se generó un formulario colapsable, para no entorpecer el UX.
+
 
 ## Funcionalidades del JavaScript
 
