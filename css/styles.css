@@ -1,0 +1,140 @@
+    /* Estilos generales para todas las pantallas*/
+
+    body {
+        padding: 20px;
+        background-color: #212529;
+        min-height: 100vh;
+        display: flex;
+        flex-flow: column;
+    }
+
+    main {
+        flex-grow: 1;
+        padding-bottom: 1rem;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .btn {
+        background-color: #fd7e14;
+        color: white;
+    }
+
+    .btn.activo {
+        background-color: white;
+        color: black;
+    }
+
+    .nav {
+        gap: 0.2rem;
+    }
+
+
+
+    /* Estilos específicos para el carrusel */
+    .carousel-caption h5 {
+        background-color: white;
+        color: black;
+    }
+
+    .imagen-carousel {
+        border: solid 2px rgba(255, 255, 255, 0.5);
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.1rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+
+    /* Estilos específicos para formularios */
+    .form-select {
+        font-size: 0.85rem;
+    }
+
+    /* Estilos específicos para tabla en transacciones */
+    .tabla-movimientos {
+        font-size: 0.8rem;
+    }
+
+
+    /*Estilos para Tablets y Desktop (el diseño es mobile first)*/
+
+    /* Media Query para Tablets */
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .div-seccion {
+            width: 500px;
+        }
+
+        .tarjeta-saldo {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .nav {
+            gap: 1rem;
+        }
+
+        .carousel-caption h5 {
+            font-size: 1.3rem;
+        }
+
+        .carousel-caption p {
+            font-size: 1rem;
+        }
+
+        .form-select {
+            font-size: 1rem;
+        }
+        .tabla-movimientos {
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Media Query para computadoras de escritorio */
+    @media (min-width: 1024px) {
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .div-seccion {
+            width: 700px;
+        }
+
+        .tarjeta-saldo {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .nav {
+            gap: 1.2rem;
+        }
+
+        .carousel-caption h5 {
+            font-size: 1.4rem;
+        }
+
+        .carousel-caption p {
+            font-size: 1.1rem;
+        }
+
+        .form-select {
+            font-size: 1rem;
+        }
+
+        .tabla-movimientos {
+            font-size: 1rem;
+        }
+
+    }

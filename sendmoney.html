@@ -1,147 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alke Wallet - Enviar Dinero</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-   
-
-  <style>
-      body {
-              padding: 20px;
-              background-color:#212529;
-      }
-
-     .container {
-        max-width: 400px;
-        margin: 0 auto;
-      }
-      .btn {
-              background-color: #fd7e14;
-              color:white;
-      }
-      .btn.activo {
-              background-color: white;
-              color:black;
-      }
-      .form-select {
-        font-size: 0.85rem;
-      }
-
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alke Wallet - Enviar Dinero</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
-    <header>
+  <header>
     <div class="container">
-        <nav class="navbar text-bg-light rounded-4">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="./img/alkemy-logo.png" alt="Logo Alkemy" width="100" >
-                </a>
-                <span class="fs-3 fw-semibold">Wallet</span>
-            </div>
-        </nav>
+      <nav class="navbar bg-body-tertiary rounded-4">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="./img/alkemy-logo.png" alt="Logo Alkemy" width="100">
+          </a>
+          <span class="fs-3 fw-semibold">Wallet</span>
+        </div>
+      </nav>
     </div>
   </header>
   <br>
-  <section>
-    <div class="container text-bg-dark">
-      <div class="card">
-        <div class="card-header">Bienvenido, <span id="nombre"></span> </div>
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text">Tu saldo actual es:</p>
-          <div class="mx-auto text-center">
-            <h3 id="saldo">$60.000</h3>
-          </div>          
+  <main>
+    <section>
+      <div class="container text-bg-dark tarjeta-saldo">
+        <div class="card">
+          <div class="card-header">Bienvenido, <span id="nombre"></span> </div>
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">Tu saldo actual es:</p>
+            <div class="mx-auto text-center">
+              <h3 id="saldo">$60.000</h3>
+            </div>
+          </div>
         </div>
       </div>
-    </div>   
-  </section> 
-  <br>
-  <section> 
-    <div class="container text-bg-dark">
-    <h2>Enviar Dinero</h2>
+    </section>
+    <br>
+    <section>
+      <div class="container text-bg-dark div-seccion ">
+        <h2>Enviar Dinero</h2>
 
 
-       <br>
-
-     
-    <form id="formEnviarDinero">
-     
- <h4>Seleccione contacto:</h4>
- <input class="form-control" id="buscaContacto" type="text" placeholder="Buscar contacto para filtrar">
-<br>
- <select class="form-select" id="listaContactos" size="4" aria-label="Lista de contactos">
-  
-</select>
-<br>
-   <div class="form-group">
-        <input type="number" class="form-control" id="montoEnvio" placeholder="Ingrese monto a enviar">
-        </div>   
-
-      <button type="submit" class="btn btn-light">Enviar dinero</button>
-   </form>
+        <br>
 
 
+        <form id="formEnviarDinero">
 
-  </div>
+          <h4>Seleccione contacto:</h4>
+          <input class="form-control" id="buscaContacto" type="text" placeholder="Buscar contacto para filtrar">
+          <br>
+          <select class="form-select" id="listaContactos" size="4" aria-label="Lista de contactos">
+
+          </select>
+          <br>
+          <div class="form-group">
+            <input type="number" class="form-control" id="montoEnvio" placeholder="Ingrese monto a enviar">
+          </div>
+
+          <button type="submit" class="btn btn-light">Enviar dinero</button>
+        </form>
+
+
+
+      </div>
     </section>
 
-    
+
     <br>
 
-  <section>
-    <div class="container text-bg-dark">
-      <a class="btn btn-light" data-bs-toggle="collapse" href="#formAgregaContacto" role="button" aria-expanded="false" aria-controls="formAgregaContacto">Nuevo Contacto + </a>
-      <form id="formAgregaContacto" class="collapse">
-        <div class="form-group">
-          <label class="form-label" for="nombre">Ingrese Nombre y Apellido:</label>
-          <input type="text" class="form-control" id="contactoNombre" placeholder="Nombre Apellido">
-          
-          <label class="form-label" for="cbu">Ingrese # Cuenta:</label>
-          <input type="text" class="form-control" id="contactoCuenta" placeholder="Ingrese # cuenta">
+    <section>
+      <div class="container div-seccion  text-bg-dark">
+        <a class="btn btn-light" data-bs-toggle="collapse" href="#formAgregaContacto" role="button"
+          aria-expanded="false" aria-controls="formAgregaContacto">Nuevo Contacto + </a>
+        <form id="formAgregaContacto" class="collapse">
+          <div class="form-group">
+            <label class="form-label" for="nombre">Ingrese Nombre y Apellido:</label>
+            <input type="text" class="form-control" id="contactoNombre" placeholder="Nombre Apellido">
 
-          <label class="form-label" for="banco">Ingrese Banco:</label>
-          <input type="text" class="form-control" id="contactoBanco" placeholder="Ingrese Banco">
+            <label class="form-label" for="cbu">Ingrese # Cuenta:</label>
+            <input type="text" class="form-control" id="contactoCuenta" placeholder="Ingrese # cuenta">
 
-          <button type="submit" class="btn btn-light">Agregar</button>
-        </div>
-      </form>
+            <label class="form-label" for="banco">Ingrese Banco:</label>
+            <input type="text" class="form-control" id="contactoBanco" placeholder="Ingrese Banco">
+
+            <button type="submit" class="btn btn-light">Agregar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <br>
+    <section>
+      <div class="container text-bg-dark">
+        <h5>¿Qué deseas hacer?</h5>
+        <nav class="nav nav-pills flex-column flex-sm-row">
+
+          <a class="btn btn-light flex-sm-fill text-sm-center" aria-current="page" href="menu.html">Inicio</a>
+
+          <a class="btn btn-light flex-sm-fill text-sm-center" href="deposit.html">Depositar</a>
+
+          <a class="btn btn-light flex-sm-fill text-sm-center activo" href="#">Enviar</a>
+
+          <a class="btn btn-light flex-sm-fill text-sm-center" href="transactions.html">Movimientos</a>
+
+        </nav>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-body-tertiary text-center text-lg-start">
+    <div class="text-center p-3 bg-body-tertiary">
+      Proyecto realizado por Alejandro Fuentes con fines educativos
     </div>
-  </section>
-  <br>
-  <section>
-    <div class="container text-bg-dark">
-      <h5>¿Qué deseas hacer?</h5>
-      <nav class="nav nav-pills flex-column flex-sm-row">
 
-        <a class="btn btn-light flex-sm-fill text-sm-center"  aria-current="page" href="menu.html">Inicio</a>
+  </footer>
 
-        <a class="btn btn-light flex-sm-fill text-sm-center" href="deposit.html">Depositar</a>
-
-        <a class="btn btn-light flex-sm-fill text-sm-center activo" href="#">Enviar</a>
-
-        <a class="btn btn-light flex-sm-fill text-sm-center" href="transactions.html">Movimientos</a>
-
-      </nav>
-    </div>
-  </section>
-
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-   <script src="./js/script.js"></script>
-   <script>
-  $(document).ready(function(){
-    $("#buscaContacto").on("keyup", function() {
-      var value = $(this).val().toLowerCase();
-      $("#listaContactos option").filter(function() {
-        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-      });
-    });
-  });
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./js/script.js"></script>
 
 </body>
+
 </html>
