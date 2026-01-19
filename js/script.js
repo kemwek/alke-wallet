@@ -63,10 +63,17 @@ $(document).ready(function () {
 
         if (!isNaN(montoEnvio) && montoEnvio > 0) {
             if ($('#listaContactos option:selected').text() != "") {
-                saldo -= montoEnvio;
-                $('#saldo').text("$" + saldo);
-                $('#montoEnvio').val('');
-                alert('Se ha enviado $' + montoEnvio + ' a ' + $('#listaContactos option:selected').text());
+                if (montoEnvio > saldo) {
+                    alert('Saldo insuficiente para realizar el envío.');
+                    return;
+                }
+                else {
+                    saldo -= montoEnvio;
+                    $('#saldo').text("$" + saldo);
+                    $('#montoEnvio').val('');
+                    alert('Se ha enviado $' + montoEnvio + ' a ' + $('#listaContactos option:selected').text());
+                }
+
             }
             else {
                 alert('Por favor seleccione un contacto válido.');
